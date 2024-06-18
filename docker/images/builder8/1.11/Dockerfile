@@ -10,7 +10,7 @@ MAINTAINER Jeffrey Townsend <jeffrey.townsend@arista.com>
 #
 #    The files in /etc/sudoers.d are ignored if they contain periods. If a invoking username contains a period then the sudo feature is broken and you cannot build.
 #
-RUN echo "http://archive.debian.org/debian/ jessie contrib main non-free" | tee /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian/ jessie contrib main non-free" | tee /etc/apt/sources.list
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install build-essential libmnl0 libmnl-dev -y
 
