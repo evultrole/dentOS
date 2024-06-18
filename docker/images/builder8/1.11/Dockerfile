@@ -12,6 +12,7 @@ MAINTAINER Jeffrey Townsend <jeffrey.townsend@arista.com>
 #
 RUN echo "http://archive.debian.org/debian/ jessie contrib main non-free" | tee /etc/apt/sources.list
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install build-essential libmnl0 libmnl-dev -y
 
 COPY docker_shell /bin/docker_shell
 COPY container-id /bin/container-id
