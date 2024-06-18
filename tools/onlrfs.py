@@ -327,6 +327,8 @@ class OnlRfsBuilder(object):
                                                universal_newlines=True).strip()
             if codename == 'stretch':
                 self.DEFAULTS['DEBIAN_MIRROR'] = 'archive.debian.org/debian/'
+            elif codename == 'jessie':
+                self.DEFAULTS['DEBIAN_MIRROR'] = 'archive.debian.org/debian/'
 
         self.kwargs.update(self.DEFAULTS)
         self.__load(config)
